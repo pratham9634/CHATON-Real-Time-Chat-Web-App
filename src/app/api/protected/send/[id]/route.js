@@ -42,8 +42,12 @@ export async function POST(req, { params }) {
         });
 
         const result = await message.save();
-
-        const receiverSocketId = getReceiverSocketId(receiverId);
+        setTimeout(() => {
+            console.log("Checking getReceiverSocketId after delay:", getReceiverSocketId(userId));
+            const receiverSocketId = getReceiverSocketId(receiverId);
+        }, 500);
+        
+        
         console.log(" Receiver socket ID :", receiverSocketId);
 if (receiverSocketId) {
     console.log("✅ Receiver socket ID found:", receiverSocketId);
