@@ -83,7 +83,7 @@ const useAuthStore = create((set,get) => ({
       connectSocket : ()=>{
         const {authUser} = get();
         if (!authUser || get().socket?.connected) return;
-        const socket= io("https://socket-server-63lj.onrender.com", { 
+        const socket= io("wss://socket-server-63lj.onrender.com", { 
           transports: ["websocket", "polling"],
         query:{
           userId: authUser._id,
